@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "CreateSkill";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-success">Yeni Yetenek Ekleme</div>
+        <label>Yetenek Adı</label>
+        <input type="text" name="SkillName" class="form-control" />
+        <br />
+        <label>Hakimiyet Değeri</label>
+        <input type="number" name="Rate" class="form-control" />
+        <br />
+        <button class="btn btn-primary btn-block text-center">Ekle</button>
+        <a href="/Skill/SkillList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>
