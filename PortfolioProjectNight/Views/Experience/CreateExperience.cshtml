@@ -1,0 +1,19 @@
+﻿@model PortfolioProjectNight.Models.Experience
+@{
+    ViewBag.Title = "CreateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-success">Yeni Deneyim Ekleme</div>
+        <label>Deneyim Adı</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        <label>Açıklama</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary btn-block text-center">Ekle</button>
+        <a href="/Experience/ExperienceList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>

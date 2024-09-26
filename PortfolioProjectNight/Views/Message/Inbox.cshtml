@@ -1,7 +1,8 @@
-﻿
+﻿@model List<PortfolioProjectNight.Models.Contact>
 @{
     ViewBag.Title = "Inbox";
     Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
 }
 
 <h2 class="mb-4">Gelen Kutusu</h2>
@@ -10,22 +11,41 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Gönderen</th>
+            <th scope="col">E-Mail</th>
             <th scope="col">Konu</th>
+            <th scope="col">G.Tarih</th>
+            <th scope="col">Okunma Bilgisi</th>
+            <th scope="col">Msj İçeriği</th>
+            <th scope="col">Kategori</th>
             <th scope="col">Mesajı Aç</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Ali Veli</td>
-            <td>Proje</td>
-            <td> <a href="#" class="btn-sm btn-warning"><i class=" fa fa-envelope mr-2"></i>Oku</a></td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>Ahmet Mehmet</td>
-            <td>Proje2</td>
-            <td> <a href="#" class="btn-sm btn-warning"><i class=" fa fa-envelope  mr-2"></i>Oku</a></td>
-        </tr>
+        Default
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@item.NameSurname</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.SendDate</td>
+                @if (item.IsRead == false)
+                {
+
+
+                    <td><a href="/Message/ChangeToTrue/@item.ContactId" class="btn btn-sm btn-outline-primary">Okundu İşaretle</a></td>
+                }
+                else
+                {
+                    <td><a href="/Message/ChangeToFalse/@item.ContactId" class="btn btn-sm btn-outline-danger">Okunmadı İşaretle</a></td>
+                }
+                <td>@item.Message</td>
+                <td>@item.Category.CategoryName</td>
+                <td> <a href="/Message/MessageDetails/@item.ContactId" class="btn-sm btn-warning"><i class=" fa fa-envelope mr-2"></i>Oku</a></td>
+                <td> <a href="/Message/DeleteMessage/@item.ContactId" class="btn-sm btn-danger"><i class=" fa fa-envelope mr-2"></i>Sil</a></td>
+            </tr>
+        }
     </tbody>
 </table>
