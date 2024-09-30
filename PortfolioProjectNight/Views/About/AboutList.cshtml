@@ -1,0 +1,32 @@
+﻿@model List<PortfolioProjectNight.Models.About>
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Ünvan</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>
+                    <a href="/About/DeleteAbout/@item.AboutId" class="btn-sm btn-danger"><i class=" fa fa-trash"></i></a>
+                    <a href="/About/UpdateAbout/@item.AboutId" class="btn-sm btn-primary"><i class=" fa fa-edit"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/About/CreateAbout" class="btn-sm btn-primary btn-block text-center"><i class=" fa fa-plus mr-3"></i>Ekle</a>

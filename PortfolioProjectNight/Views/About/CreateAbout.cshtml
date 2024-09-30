@@ -1,0 +1,21 @@
+﻿@model PortfolioProjectNight.Models.About
+
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-success">Yeni Hakkımda Bilgisi Ekleme</div>
+        <label>İsim Soyisim</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        <label>Ünvan</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary btn-block text-center">Ekle</button>
+        <a href="/About/AboutList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>
