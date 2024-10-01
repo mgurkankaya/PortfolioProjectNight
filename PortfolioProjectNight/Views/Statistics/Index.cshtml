@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h2>İstatistikler</h2>
+<div class="row">
+    <div class="col-4">
+        <div class="alert alert-success  text-center  " role="alert">
+            <h4 class="alert-heading">@ViewBag.TMC</h4>
+            <p>Mesaj</p>
+            <hr>
+            <p class="mb-0"><b>Toplam Mesaj Sayısı</b></p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="alert alert-danger  text-center  " role="alert">
+            <h4 class="alert-heading">@ViewBag.MRT</h4>
+            <p>Mesaj</p>
+            <hr>
+            <p class="mb-0"><b>Okunan Mesaj Sayısı</b></p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="alert alert-primary  text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.MRF</h4>
+            <p>Mesaj</p>
+            <hr>
+            <p class="mb-0"><b>Okunmayan Mesaj Sayısı</b></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="alert alert-info  text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.Skill</h4>
+            <p>Yetenek</p>
+            <hr>
+            <p class="mb-0"><b>Yetenek Sayısı</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-warning text-center  " role="alert">
+            <h4 class="alert-heading">@ViewBag.SkillSum</h4>
+            <p>Puan</p>
+            <hr>
+            <p class="mb-0"><b>Yetenek Toplam Puanı</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-danger text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.SkillRate</h4>
+            <p>Puan</p>
+            <hr>
+            <p class="mb-0"><b>Yetenek Ortalama Puanı</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-info  text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.SkillTop</h4>
+            <p>Ortalama</p>
+            <hr>
+            <p class="mb-0"><b>En Yüksek Yetenek</b></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="alert alert-primary text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.MsjCountRef</h4>
+            <p>Mesaj</p>
+            <hr>
+            <p class="mb-0"><b>Referans Konulu Mesaj Sayısı</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-info text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.MsjCountRefName</h4>
+            <p>Ad Soyad</p>
+            <hr>
+            <p class="mb-0"><b>Referans Konulu Mesajı Gönderen</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-dark text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.x</h4>
+            <p>Sayı</p>
+            <hr>
+            <p class="mb-0"><b>True ve H</b></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="alert alert-danger text-center " role="alert">
+            <h4 class="alert-heading">@ViewBag.xx</h4>
+            <p>Yetenek Adı</p>
+            <hr>
+            <p class="mb-0"><b>Yetenek = 90</b></p>
+        </div>
+    </div>
+</div>

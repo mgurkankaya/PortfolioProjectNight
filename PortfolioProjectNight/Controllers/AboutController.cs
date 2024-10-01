@@ -13,6 +13,7 @@ namespace PortfolioProjectNight.Controllers
         public ActionResult AboutList()
         {
             var values = db.Abouts.ToList();
+ 
             return View(values);
         }
 
