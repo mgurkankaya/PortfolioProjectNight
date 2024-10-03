@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortfolioProjectNight.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,7 @@ namespace PortfolioProjectNight.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default
+        DbMyPortfolioNightEntities context = new DbMyPortfolioNightEntities();
         public ActionResult Index()
         {
             return View();
@@ -30,6 +31,40 @@ namespace PortfolioProjectNight.Controllers
         }
         public ActionResult PartialFooter()
         {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialAbout()
+        {
+            var values = context.Abouts.ToList();
+            return PartialView(values);
+
+        } 
+        public PartialViewResult PartialExperience()
+        {
+       
+            var values = context.Experiences.ToList();
+            return PartialView(values);
+
+        }
+
+        public PartialViewResult PartialSkill()
+        {
+            var values = context.Skills.Where(x=>x.Status==true).ToList();
+            return PartialView(values);
+
+        }
+
+        public ActionResult PartialHeader()
+        {
+            ViewBag.title = context.Profiles.Select(x=>x.Title).FirstOrDefault();
+            ViewBag.description = context.Profiles.Select(x=>x.Description).FirstOrDefault();
+            ViewBag.adress = context.Profiles.Select(x=>x.Adres).FirstOrDefault();
+            ViewBag.email = context.Profiles.Select(x=>x.Email).FirstOrDefault();
+            ViewBag.phone = context.Profiles.Select(x=>x.Phone).FirstOrDefault();
+            ViewBag.github = context.Profiles.Select(x=>x.Github).FirstOrDefault();
+            ViewBag.imgUrl = context.Profiles.Select(x=>x.ImageUrl).FirstOrDefault();
+            ViewBag.title2 = context.Profiles.Single().Title;
             return PartialView();
         }
     }
