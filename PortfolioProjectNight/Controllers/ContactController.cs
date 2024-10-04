@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortfolioProjectNight.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,7 @@ namespace PortfolioProjectNight.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
+        DbMyPortfolioNightEntities context = new DbMyPortfolioNightEntities();
         public PartialViewResult PartialContactSideBar()
         {
             return PartialView();
@@ -16,17 +17,18 @@ namespace PortfolioProjectNight.Controllers
 
         public PartialViewResult PartialContact()
         {
+            ViewBag.adress = context.Profiles.Single().Adres;
+            ViewBag.description = context.Profiles.Single().Description;
+            ViewBag.phone = context.Profiles.Single().Phone;
+            ViewBag.email = context.Profiles.Single().Email;
             return PartialView();
         }
 
         public PartialViewResult PartialContactMap()
         {
+            ViewBag.map = context.Profiles.Single().MAp;
             return PartialView();
         }
 
-        public PartialViewResult PartialContactMessage()
-        {
-            return PartialView();
-        }
     }
 }

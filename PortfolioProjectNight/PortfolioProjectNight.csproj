@@ -686,7 +686,6 @@
     <Content Include="Views\Contact\PartialContactSideBar.cshtml" />
     <Content Include="Views\Contact\PartialContact.cshtml" />
     <Content Include="Views\Contact\PartialContactMap.cshtml" />
-    <Content Include="Views\Contact\PartialContactMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
