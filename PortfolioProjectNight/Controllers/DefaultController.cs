@@ -31,35 +31,45 @@ namespace PortfolioProjectNight.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult PartialHead()
+        public PartialViewResult PartialHead()
         {
             return PartialView();
         }
 
-        public ActionResult PartialScript()
+        public PartialViewResult PartialScript()
         {
             return PartialView();
         }
 
-        public ActionResult PartialNavBar()
+        public PartialViewResult PartialNavBar()
         {
             return PartialView();
         }
-        public ActionResult PartialFooter()
+        public PartialViewResult PartialFooter()
         {
             return PartialView();
         }
 
         public PartialViewResult PartialAbout()
         {
-            var values = context.Abouts.ToList();
-            return PartialView(values);
+            ViewBag.aboutTitle = context.Abouts.Select(x => x.Title).FirstOrDefault();
+            ViewBag.aboutDescription = context.Abouts.Select(x => x.Description).FirstOrDefault();
+            ViewBag.aboutImgUrl = context.Abouts.Select(x => x.ImgUrl).FirstOrDefault();
+            var value = context.SocialMedias.ToList();
+            return PartialView(value);
 
         }
         public PartialViewResult PartialExperience()
         {
 
             var values = context.Experiences.ToList();
+            return PartialView(values);
+
+        }
+        public PartialViewResult PartialEducation()
+        {
+
+            var values = context.Educations.ToList();
             return PartialView(values);
 
         }
@@ -70,8 +80,26 @@ namespace PortfolioProjectNight.Controllers
             return PartialView(values);
 
         }
+        public PartialViewResult PartialService()
+        {
+            var values = context.Services.ToList();
+            return PartialView(values);
 
-        public ActionResult PartialHeader()
+        }
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = context.Projects.ToList();
+            return PartialView(values);
+
+        }
+        public PartialViewResult PartialTestimonial()
+        {
+            var value = context.Testimonials.ToList();
+            return PartialView(value);
+
+        }
+
+        public PartialViewResult PartialHeader()
         {
             ViewBag.title = context.Profiles.Select(x => x.Title).FirstOrDefault();
             ViewBag.description = context.Profiles.Select(x => x.Description).FirstOrDefault();
@@ -81,7 +109,8 @@ namespace PortfolioProjectNight.Controllers
             ViewBag.github = context.Profiles.Select(x => x.Github).FirstOrDefault();
             ViewBag.imgUrl = context.Profiles.Select(x => x.ImageUrl).FirstOrDefault();
             ViewBag.title2 = context.Profiles.Single().Title;
-            return PartialView();
+            var value = context.SocialMedias.ToList();
+            return PartialView(value);
         }
     }
 }

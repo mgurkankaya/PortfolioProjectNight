@@ -1,0 +1,48 @@
+﻿@model List<PortfolioProjectNight.Models.SocialMedia>
+@{
+    ViewBag.Title = "SocialMediaList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Sosyal Medya Listesi</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Url</th>
+            <th scope="col">İkon</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Değiştir</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <th scope="row">@item.SocialMediaId</th>
+                <td>@item.Title</td>
+                <td>@item.Url</td>
+                <td>@item.Icon</td>
+                <td>@item.Status</td>
+
+                @if (item.Status == false)
+                {
+                    <td><a href="/SocialMedia/StatusChangeToTrue/@item.SocialMediaId" class="btn btn-success">Aktif Olarak İşaretle</a></td>
+                }
+                else
+                {
+                    <td><a href="/SocialMedia/StatusChangeToFalse/@item.SocialMediaId" class="btn btn-danger">Pasif Olarak İşaretle</a></td>
+                }
+
+                <td>
+                    <a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn-sm btn-danger"><i class=" fa fa-trash"></i></a>
+                    <a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn-sm btn-primary"><i class=" fa fa-edit"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/SocialMedia/CreateSocialMedia" class="btn-sm btn-primary btn-block text-center"><i class=" fa fa-plus mr-3"></i>Ekle</a>

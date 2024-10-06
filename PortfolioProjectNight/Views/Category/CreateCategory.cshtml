@@ -1,17 +1,16 @@
-﻿
+﻿@model PortfolioProjectNight.Models.Category
 @{
     ViewBag.Title = "CreateCategory";
     Layout = "~/Views/Admin/Index.cshtml";
 }
-
-<div class="container">
-    <br /><br />
-    <div class="alert alert-success">Yeni Kategori Girişi</div>
-    <label>Kategori Adı</label>
-    <input type="text" class="form-control" />
-    <br />
-    <label>Kategori Açıklaması</label>
-    <textarea rows="4" class="form-control"></textarea>
-    <br />
-    <button class="btn btn-primary">Kategoriyi Oluştur</button>
-</div>
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-success">Yeni Kategori Girişi</div>
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary btn-block text-center">Ekle</button>
+        <a href="/Category/CategoryList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>

@@ -12,11 +12,12 @@ namespace PortfolioProjectNight.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Expertice
+    public partial class Testimonial
     {
-        public int ExperticeId { get; set; }
-        public string Title { get; set; }
-        public string Icon { get; set; }
-        public string Description { get; set; }
+        public int TestimonailId { get; set; }
+        public string NameSurname { get; set; }
+        public string Location { get; set; }
+        public string Comment { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

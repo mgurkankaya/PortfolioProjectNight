@@ -39,5 +39,13 @@ namespace PortfolioProjectNight.Controllers
             context.SaveChanges();
             return RedirectToAction("Inbox");
         }
+
+        public ActionResult MessageDetails(int id)
+        {
+            var value = context.Contacts.Where(x => x.ContactId == id).FirstOrDefault();
+            value.IsRead = true;
+            context.SaveChanges();
+            return View(value);
+        }
     }
 }

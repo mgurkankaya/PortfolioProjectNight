@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h2>Yetenek Dereceleri</h2>
+<canvas id="myChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        var sName = @Html.Raw(Json.Encode(ViewBag.SName));
+        var sRate = @Html.Raw(Json.Encode(ViewBag.SRate));
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: sName,
+                datasets: [{
+                    label: 'Yetenek Dereceleri',
+                    data: sRate,
+                    backgroundColor: 'rgba(248, 183, 57, 1)',
+                    borderColor: 'rgba(29, 25, 25, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    };
+</script>
+<style>
+    #chartContainer {
+        width: 80%;
+        height: 300px;
+        margin: auto;
+    }
+</style>

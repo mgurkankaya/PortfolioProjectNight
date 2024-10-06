@@ -1,23 +1,31 @@
-﻿
+﻿@model PortfolioProjectNight.Models.Education
 @{
     ViewBag.Title = "CreateEducation";
     Layout = "~/Views/Admin/Index.cshtml";
 }
 <div class="container">
-    <h2 class="mb-4">Eğitim Oluştur</h2>
-    <div class="alert alert-success">Yeni Kategori Girişi</div>
-
-    <form method="post" class="form-group">
-        <label>Eğitim Adı</label>
-        <input type="text" class="form-control mb-2" />
 
 
-        <label>Eğitim Alt Adı</label>
-        <input type="text" class="form-control mb-2" />
-
-        <label>Açıklama</label>
-        <input type="text" class="form-control mb-2" />
-
-        <button class="btn btn-primary">Eğitimi Oluştur</button>
+    <form method="post">
+        <div class="container">
+            <br /><br />
+            <div class="alert alert-success">Yeni Kategori Girişi</div>
+            <label>Eğitim Başlığı</label>
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+            <br />
+            <label>Eğitim Alt Başlığı</label>
+            @Html.TextBoxFor(x => x.Subtitle, new { @class = "form-control" })
+            <br />
+            <label>Eğitim Yılı</label>
+            @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+            <br />
+            <label>Açıklama</label>
+            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @row = 5 })
+            <br />
+            <button class="btn btn-primary btn-block text-center">Ekle</button>
+            <a href="/Education/EducationList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+        </div>   
     </form>
+
 </div>
+

@@ -1,0 +1,27 @@
+﻿﻿@model PortfolioProjectNight.Models.Contact
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="container">
+    <br /><br />
+    <div class="alert alert-success">Mesaj Detayı</div>
+
+    <label><b>Gönderen:</b> @Html.DisplayFor(x => x.NameSurname)</label>
+    <br />
+
+    <label><b>E-Mail:</b> @Html.DisplayFor(x => x.Email)</label>
+    <br />
+
+    <label><b>Konu:</b> @Html.DisplayFor(x => x.Subject)</label>
+    <br />
+
+    <label><b>Kategori:</b> @Html.DisplayFor(x => x.Category.CategoryName)</label>
+    <br />
+
+    <label><b>Mesaj:</b> @Html.DisplayFor(x => x.Message)</label>
+    <br />
+    <a href="/Message/Inbox" class="btn-sm btn-primary btn-block text-center"><i class=" fa fa-undo mr-3"></i>Mesajlara Dön</a>
+</div>
+

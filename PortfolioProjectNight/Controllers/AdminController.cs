@@ -31,5 +31,22 @@ namespace PortfolioProjectNight.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult DownloadMyCV()
+        {
+            var filePath = Server.MapPath("~/Content/CvFile/MGK_CV.pdf");
+            if (!System.IO.File.Exists(filePath))
+            {
+                return HttpNotFound("Dosya veritabanında bulunamadı.");
+            }
+            var fileName = "MGK_CV.pdf";
+            return File(filePath, "pdf", fileName);
+        }
+
+
+        public ActionResult DownloadCV()
+        {
+            return View();
+        }
     }
 }

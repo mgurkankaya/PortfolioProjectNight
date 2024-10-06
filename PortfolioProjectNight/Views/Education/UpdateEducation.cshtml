@@ -1,0 +1,30 @@
+﻿@model PortfolioProjectNight.Models.Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <input type="hidden" name="EducationId" value="@Model.EducationId" />
+        <div class="alert alert-success"> Eğitim Güncelleme Sayfası</div>
+        <label>Eğitim Başlığı</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+
+        <label>Eğitim Alt Başlığı</label>
+        @Html.TextBoxFor(x => x.Subtitle, new { @class = "form-control" })
+        <br />
+
+        <label>Eğitim Yılı</label>
+        @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+        <br />
+
+        <label>Açıklama</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @row=10 })
+        <br />
+        <button class="btn btn-primary btn-block text-center">Güncelle</button>
+        <a href="/Education/EducationList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>

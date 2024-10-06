@@ -30,7 +30,6 @@ namespace PortfolioProjectNight.Models
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<Experience> Experiences { get; set; }
-        public virtual DbSet<Expertice> Expertices { get; set; }
         public virtual DbSet<Feature> Features { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<Service> Services { get; set; }
@@ -38,5 +37,7 @@ namespace PortfolioProjectNight.Models
         public virtual DbSet<SocialMedia> SocialMedias { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Admin> Admins { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Testimonial> Testimonials { get; set; }
     }
 }

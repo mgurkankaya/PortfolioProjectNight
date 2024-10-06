@@ -1,8 +1,9 @@
-﻿@model List<PortfolioProjectNight.Models.Skill>
+﻿@using PagedList
+@model PagedList.IPagedList<PortfolioProjectNight.Models.Skill>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "SkillList";
     Layout = "~/Views/Admin/Index.cshtml";
-    int count = 0;
 }
 <h2>Yetenekler Listesi</h2>
 <table class="table table-hover">
@@ -11,13 +12,14 @@
             <th scope="col">#</th>
             <th scope="col">Yetenek Adı</th>
             <th scope="col">Değer</th>
+            <th scope="col">Durum</th>
             <th scope="col">İşlemler</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-           
+
             var changeClass = "";
             if (item.Rate < 50)
             {
@@ -27,7 +29,7 @@
             {
                 changeClass = "bg-warning";
             }
-           else if ((item.Rate > 80) && (item.Rate <= 100))
+            else if ((item.Rate > 80) && (item.Rate <= 100))
             {
                 changeClass = "bg-success";
             }
@@ -35,22 +37,37 @@
             {
                 changeClass = "";
             }
-            count++;
+
             <tr>
-                <th scope="row">@count</th>
+                <th scope="row">@item.SkillId</th>
                 <td>@item.SkillName</td>
                 <td>
-                
+
                     <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="@item.Rate" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar  @changeClass" style="width: @item.Rate%">@item.Rate</div>
                     </div>
                 </td>
+                <td>@item.Status</td>
                 <td>
                     <a href="/Skill/DeleteSkill/@item.SkillId" class="btn-sm btn-danger"><i class=" fa fa-trash"></i></a>
                     <a href="/Skill/UpdateSkill/@item.SkillId" class="btn-sm btn-primary"><i class=" fa fa-edit"></i></a>
                 </td>
             </tr>
         }
+
     </tbody>
+
 </table>
-<a href="/Skill/CreateSkill" class="btn-sm btn-primary btn-block text-center"><i class=" fa fa-plus mr-3"></i>Ekle</a>
+
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        @Html.PagedListPager((IPagedList)Model, p => Url.Action("SkillList", new { p }), new PagedListRenderOptions
+ {
+     LiElementClasses = new List<string>
+     {"page-link"}
+ })
+    </ul>
+</nav>
+<a href="/Skill/CreateSkill" class="btn-sm btn-primary btn-block text-center mt-2"><i class=" fa fa-plus mr-3"></i>Ekle</a>

@@ -1,0 +1,27 @@
+﻿@model PortfolioProjectNight.Models.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <input type="hidden" name="TestimonailId" value="@Model.TestimonailId" />
+        <div class="alert alert-success">Yeni Referans Güncelleme</div>
+        <label>İsim Soyisim</label>
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <br />
+        <label>Lokasyon</label>
+        @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+        <br />
+        <label>Görsel URL</label>
+        <input type="file" class="form-control" name="ImgUrl" />
+        <br />
+        <label>Yorum</label>
+        @Html.TextAreaFor(x => x.Comment, new { @class = "form-control", @cols = 80, @rows = 10 })
+        <br />
+        <button class="btn btn-primary btn-block text-center">Güncelle</button>
+        <a href="/Testimonial/TestimonialList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>

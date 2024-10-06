@@ -1,0 +1,36 @@
+﻿@model PortfolioProjectNight.Models.SocialMedia
+@{
+    ViewBag.Title = "CreateSocialMedia";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-success">Sosyal Medya Bilgisi Ekleme</div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        <label>URL</label>
+        @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+        <br />
+
+        <label>İkon</label>
+        @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+        <br />
+
+
+
+        <label>Durum</label>
+        @Html.DropDownListFor(x => x.Status, new List<SelectListItem>()
+{
+   new SelectListItem() { Text = "Aktif", Value = "True" },
+   new SelectListItem() { Text = "Pasif", Value = "False"}
+}, "Seç.....", new { @class = "form-control" })
+        <br />
+
+       
+        <button class="btn btn-primary btn-block text-center">Ekle</button>
+        <a href="/SocialMedia/SocialMediaList" class="btn btn-secondary btn-block text-center">Vazgeç</a>
+    </div>
+</form>
