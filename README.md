@@ -26,19 +26,18 @@ Linkedin profilim için ([tıklayın](https://www.linkedin.com/in/m-gürkan-kaya
 
 ### Admin Paneli
 
-![Image1]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/1.png])
-![Image2]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/2.png])
-![Image3]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/3.png])
-![Image4]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/4.png])
-![Image5]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/5.png])
-![Image6]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/6.png])
-![Image7]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/7.png])
-
+![Image1](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/1.png)
+![Image2](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/2.png)
+![Image3](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/3.png)
+![Image4](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/4.png)
+![Image5](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/5.png)
+![Image6](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/6.png)
+![Image7](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/7.png)
 
 ### Kullanıcı Arayüzü
-![Image8]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/8.png])
-![Image9]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/9.png])
-![Image10]([https://raw.githubusercontent.com/mgurkankaya/OneMusic/master/projectImages/10.png])
+![Image8](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/8.png)
+![Image9](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/9.png)
+![Image10](https://raw.githubusercontent.com/mgurkankaya/PortfolioProjectNight/refs/heads/master/PortfolioProjectNight/10.png)
 
 
 
